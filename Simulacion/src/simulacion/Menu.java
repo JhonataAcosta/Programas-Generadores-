@@ -17,7 +17,10 @@ public class Menu {
                     + "1. Generador Básico\n "
                     + "2. Generador Midsquare \n "
                     + "3. Congruencial lineal\n "
-                    + "4. Salir");
+                    + "4. Generador Fibonacci\n "
+                    + "5. Wichmann y Hill\n "
+                    + "6. L'Ecuyer\n "
+                    + "7. Salir");
             switch (datos_seleccionados) {
                 case "1":
                     realizar_calculos();
@@ -28,14 +31,22 @@ public class Menu {
                     case "3":
                     Congruencial();
                     break;
-                case "4":
+                    case "4":
+                    generador_Fibonacci();
+                    break;
+                    case "5":
+                   generador_Wichmann_Hill();
+                    break;
+                    case "6":
+                    gen_Lecuyer();
+                    case "7":
                     salida();
                     break;
-                default:
+                    default:
                     opcionInvalida();
                     break;
             }
-        } while(!datos_seleccionados.equals("4"));
+        } while(!datos_seleccionados.equals("7"));
     }
 
     private void realizar_calculos() throws ScriptException {
@@ -54,6 +65,21 @@ public class Menu {
         congruencial.Congruencial();
     }
     
+    private void generador_Fibonacci() {
+       simulacion.Fibonacci gen=new simulacion.Fibonacci();
+       gen.generador_Fibonacci();
+    }
+    
+    private void generador_Wichmann_Hill() {
+        simulacion.Wichmann_y_Hill gen=new simulacion.Wichmann_y_Hill();
+        gen.generador_Wichmann_Hill();
+    }
+    
+    private void gen_Lecuyer() {
+        simulacion.Lecuyer gen=new simulacion.Lecuyer();
+        gen.gen_Lecuyer();
+    }
+    
     private void salida() {
        JOptionPane.showMessageDialog(null, "Has salido del programa, hasta pronto!!!");
     }
@@ -61,4 +87,10 @@ public class Menu {
     private void opcionInvalida() {
        JOptionPane.showMessageDialog(null, "Opción Invalida");
     }
+
+    
+
+    
+
+    
 }
