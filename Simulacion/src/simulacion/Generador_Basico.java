@@ -1,5 +1,6 @@
 package Simulacion;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.script.ScriptEngine;
@@ -67,7 +68,7 @@ public class Generador_Basico {
         }
     }
     
-    public static void main(String[] args) throws ScriptException {
+    public static void main(String[] args) throws ScriptException, IOException {
         
         Menu menu =new Menu();
         menu.mostrar();

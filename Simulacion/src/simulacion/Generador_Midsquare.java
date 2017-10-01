@@ -1,5 +1,6 @@
 package Simulacion;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.script.ScriptException;
@@ -47,7 +48,7 @@ public class Generador_Midsquare {
         }while(numeros.get(numeros.size()-1)!=0&&!repetido);
     }
     
-    public static void main(String[] args) throws ScriptException {
+    public static void main(String[] args) throws ScriptException, IOException {
         
         Generador_Midsquare mid=new Generador_Midsquare();
         mid.Midsquare();

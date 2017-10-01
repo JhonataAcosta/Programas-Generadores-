@@ -1,5 +1,6 @@
 package Simulacion;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.script.ScriptException;
@@ -35,7 +36,7 @@ public class Congruencial_Lineal {
         }
     }
  
-    public static void main(String[] args) throws ScriptException {
+    public static void main(String[] args) throws ScriptException, IOException {
         
         Congruencial_Lineal congruencial=new Congruencial_Lineal();
         congruencial.Congruencial();

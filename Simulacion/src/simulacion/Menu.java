@@ -1,5 +1,6 @@
 package Simulacion;
 
+import java.io.IOException;
 import javax.script.ScriptException;
 import javax.swing.JOptionPane;
 /**
@@ -8,7 +9,7 @@ import javax.swing.JOptionPane;
  */
 public class Menu {
 
-    public void mostrar() throws ScriptException {
+    public void mostrar() throws ScriptException, IOException {
         String datos_seleccionados;
         JOptionPane.showMessageDialog(null, "\nSimulación\nJhonatan Julian Acosta\n ID: 2009711");
         do {
@@ -20,7 +21,8 @@ public class Menu {
                     + "4. Generador Fibonacci\n "
                     + "5. Wichmann y Hill\n "
                     + "6. L'Ecuyer\n "
-                    + "7. Salir");
+                    + "7. Programa Imagen\n"
+                    + "8. Salir");
             switch (datos_seleccionados) {
                 case "1":
                     realizar_calculos();
@@ -40,13 +42,16 @@ public class Menu {
                     case "6":
                     gen_Lecuyer();
                     case "7":
-                    salida();
+                    calculos_imagen();
+                    break;
+                    case "8":
+                     salida();
                     break;
                     default:
                     opcionInvalida();
                     break;
             }
-        } while(!datos_seleccionados.equals("7"));
+        } while(!datos_seleccionados.equals("8"));
     }
 
     private void realizar_calculos() throws ScriptException {
@@ -80,6 +85,12 @@ public class Menu {
         gen.gen_Lecuyer();
     }
     
+    private void calculos_imagen() throws ScriptException, IOException {
+        
+    simulacion.ProgramaImagen img=new simulacion.ProgramaImagen();
+    img.calculos_imagen();
+    }
+    
     private void salida() {
        JOptionPane.showMessageDialog(null, "Has salido del programa, hasta pronto!!!");
     }
@@ -87,10 +98,4 @@ public class Menu {
     private void opcionInvalida() {
        JOptionPane.showMessageDialog(null, "Opción Invalida");
     }
-
-    
-
-    
-
-    
 }
