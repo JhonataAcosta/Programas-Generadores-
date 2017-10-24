@@ -22,7 +22,11 @@ public class Menu {
                     + "5. Wichmann y Hill\n "
                     + "6. L'Ecuyer\n "
                     + "7. Programa Imagen\n"
-                    + "8. Salir");
+                    + "8. Pruebas Generador Básico\n"
+                    + "9. Pruebas Generador Misdquare\n"
+                    + "10. Pruebas Generador Lecuyer\n"
+                    + "11. Pruebas Generador Wichmann y Hill\n"
+                    + "12. Salir");
             switch (datos_seleccionados) {
                 case "1":
                     realizar_calculos();
@@ -37,7 +41,7 @@ public class Menu {
                     generador_Fibonacci();
                     break;
                     case "5":
-                   generador_Wichmann_Hill();
+                    generador_Wichmann_Hill();
                     break;
                     case "6":
                     gen_Lecuyer();
@@ -45,13 +49,21 @@ public class Menu {
                     calculos_imagen();
                     break;
                     case "8":
+                     Generador_Basico_Pruebas();
+                     case "9":
+                     Midsquare_Pruebas();
+                    case "10":
+                     Lecuyer_Pruebas();
+                     case "11":
+                     Wichmann_Pruebas();
+                    case "12":
                      salida();
                     break;
                     default:
                     opcionInvalida();
                     break;
             }
-        } while(!datos_seleccionados.equals("8"));
+        } while(!datos_seleccionados.equals("12"));
     }
 
     private void realizar_calculos() throws ScriptException {
@@ -86,9 +98,27 @@ public class Menu {
     }
     
     private void calculos_imagen() throws ScriptException, IOException {
-        
     simulacion.ProgramaImagen img=new simulacion.ProgramaImagen();
     img.calculos_imagen();
+    }
+    
+    private void Generador_Basico_Pruebas() throws ScriptException, IOException {
+    simulacion.Pruebas_Generador_Basico gen=new simulacion.Pruebas_Generador_Basico();
+    }
+  
+    private void Midsquare_Pruebas() throws ScriptException, IOException{
+    simulacion.Pruebas_Misquare mid=new simulacion.Pruebas_Misquare();
+    mid.Midsquare();
+    }
+    
+   private void Lecuyer_Pruebas() throws ScriptException, IOException{
+    simulacion.Pruebas_Lecuyer mid=new simulacion.Pruebas_Lecuyer();
+    mid.gen_Lecuyer();
+    }
+   
+   private void Wichmann_Pruebas() throws ScriptException, IOException{
+    simulacion.Pruebas_Wichmann_hill gen=new simulacion.Pruebas_Wichmann_hill();
+    gen.generador_Wichmann_Hill();
     }
     
     private void salida() {
