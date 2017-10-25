@@ -26,7 +26,9 @@ public class Menu {
                     + "9. Pruebas Generador Misdquare\n"
                     + "10. Pruebas Generador Lecuyer\n"
                     + "11. Pruebas Generador Wichmann y Hill\n"
-                    + "12. Salir");
+                    + "12. Pruebas Generador Congruencial Lineal\n"
+                    + "13. Pruebas Generador Fibonacci\n"
+                    + "14. Salir");
             switch (datos_seleccionados) {
                 case "1":
                     realizar_calculos();
@@ -56,14 +58,18 @@ public class Menu {
                      Lecuyer_Pruebas();
                      case "11":
                      Wichmann_Pruebas();
-                    case "12":
+                     case "12":
+                     Congruencial_Pruebas();
+                     case "13":
+                     Fibonacci_Pruebas();
+                    case "14":
                      salida();
                     break;
                     default:
                     opcionInvalida();
                     break;
             }
-        } while(!datos_seleccionados.equals("12"));
+        } while(!datos_seleccionados.equals("14"));
     }
 
     private void realizar_calculos() throws ScriptException {
@@ -119,6 +125,16 @@ public class Menu {
    private void Wichmann_Pruebas() throws ScriptException, IOException{
     simulacion.Pruebas_Wichmann_hill gen=new simulacion.Pruebas_Wichmann_hill();
     gen.generador_Wichmann_Hill();
+    }
+   
+   private void Congruencial_Pruebas() {
+        simulacion.Prueba_Congruencial_Lineal congru=new simulacion.Prueba_Congruencial_Lineal();
+        congru.Congruencial();
+    }
+
+    private void Fibonacci_Pruebas() {
+        simulacion.Pruebas_Fibonacci gen=new simulacion.Pruebas_Fibonacci();
+        gen.generador_Fibonacci();
     }
     
     private void salida() {
